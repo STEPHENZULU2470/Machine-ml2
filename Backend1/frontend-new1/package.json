@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "d3-geo": "^1.12.1",
+    "framer-motion": "^12.19.1",
+    "react-circular-progressbar": "^2.2.0",
+    "react-router-dom": "^7.6.2",
+    "react-simple-maps": "^1.0.0"
+  }
+}
