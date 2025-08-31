@@ -9,9 +9,4 @@ matplotlib
 seaborn
 joblib
 werkzeug
-threading
-csv
-os
-logging
-glob
-collections 
+requests 

@@ -1,4 +1,7 @@
 {
+  "name": "ids-backend",
+  "version": "1.0.0",
+  "description": "Intrusion Detection System Backend",
   "dependencies": {
     "framer-motion": "^12.19.1"
   }
