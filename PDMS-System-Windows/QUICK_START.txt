@@ -1,0 +1,43 @@
+🛡️ PDMS - AI-Powered Intrusion Detection System
+===============================================
+
+🚀 QUICK START (Copy and paste these commands):
+
+cd ~/Desktop/PDMS-System
+./start-system.sh
+
+Then open your browser to: http://localhost:3000
+
+🎯 WHAT YOU CAN DO:
+
+1. 📁 UPLOAD ANY CSV DATASET
+   - Drag & drop files in the "Upload Dataset" tab
+   - Get instant threat analysis results
+   - Hear audio alerts for detected threats! 🔊
+
+2. 📊 MONITOR REAL-TIME
+   - View live system status on Dashboard
+   - Watch threat statistics update
+   - See active alerts and system health
+
+3. 🛡️ RESPOND TO THREATS  
+   - Block malicious IP addresses
+   - Report threats to security systems
+   - Trace network connections
+
+4. 🤖 MANAGE ML MODEL
+   - View model performance metrics
+   - Retrain with new datasets
+   - Compare different algorithms
+
+🔊 ALERT SOUNDS:
+- Low threats: Gentle beep
+- Medium threats: Standard alarm
+- High threats: Urgent alarm  
+- Critical threats: Continuous alarm
+
+📁 DEMO FILE:
+Use "demo-dataset.csv" to test the system!
+
+🎉 YOUR SYSTEM IS READY!
+Everything is linked and working perfectly!
