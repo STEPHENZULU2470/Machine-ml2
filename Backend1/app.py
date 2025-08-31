@@ -15,6 +15,7 @@ from threat_alert_system import process_threat, get_alerts, get_alert_stats
 import csv
 import time
 from datetime import datetime
+import json
 
 MODEL_PATH = 'rf_model.joblib'
 EXPLAINER_PATH = 'shap_explainer.joblib'
@@ -534,4 +535,5 @@ if __name__ == '__main__':
     # Start live packet capture in a background thread
     t = threading.Thread(target=capture_loop, daemon=True)
     t.start()
+
     app.run(host='0.0.0.0', port=5000, debug=True)
