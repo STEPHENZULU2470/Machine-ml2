@@ -15,22 +15,26 @@ INTERFACE = 'Wi-Fi'
 # --- AUTO-DETECT ACTIVE INTERFACE ---
 try:
     import pyshark
-    interfaces = pyshark.LiveCapture.list_interfaces()
-    print("[INFO] Available interfaces:")
-    for i, iface in enumerate(interfaces):
-        print(f"  {i}: {iface}")
-    # Allow manual override here if needed:
-    # INTERFACE = 'Wi-Fi'  # <-- Uncomment and set your interface name if needed
-    if INTERFACE is None:
-        preferred = [iface for iface in interfaces if not ("loopback" in iface.lower() or "virtual" in iface.lower() or "npcap" in iface.lower())]
-        if preferred:
-            INTERFACE = preferred[0]
-            print(f"[AUTO] Selected interface: {INTERFACE}")
-        else:
-            INTERFACE = interfaces[0] if interfaces else None
-            print(f"[AUTO] Fallback interface: {INTERFACE}")
+    if hasattr(pyshark.LiveCapture, 'list_interfaces'):
+        interfaces = pyshark.LiveCapture.list_interfaces()
+        print("[INFO] Available interfaces:")
+        for i, iface in enumerate(interfaces):
+            print(f"  {i}: {iface}")
+        # Allow manual override here if needed:
+        # INTERFACE = 'Wi-Fi'  # <-- Uncomment and set your interface name if needed
+        if INTERFACE is None:
+            preferred = [iface for iface in interfaces if not ("loopback" in iface.lower() or "virtual" in iface.lower() or "npcap" in iface.lower())]
+            if preferred:
+                INTERFACE = preferred[0]
+                print(f"[AUTO] Selected interface: {INTERFACE}")
+            else:
+                INTERFACE = interfaces[0] if interfaces else None
+    else:
+        print("[AUTO] Could not auto-detect interface: list_interfaces method not available")
+        print(f"[AUTO] Fallback interface: {INTERFACE}")
 except Exception as e:
     print(f"[AUTO] Could not auto-detect interface: {e}")
+    print(f"[AUTO] Using fallback interface: {INTERFACE}")
 FORENSIC_LOG = 'forensic_log.csv'
 
 #help to load model and features
